@@ -4,12 +4,11 @@ import { Heading, Text, BaseLayout } from '@frenchkiss-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import FarmStakingCard from 'views/Home/components/FarmStakingCard'
-// import LotteryCard from 'views/Home/components/LotteryCard'
 import KissStats from 'views/Home/components/KissStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPRCard from 'views/Home/components/EarnAPRCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
-// import WinCard from 'views/Home/components/WinCard'
+import KissAnnouncement from 'views/Home/components/KissAnnouncement'
 
 const Hero = styled.div`
   align-items: center;
@@ -55,25 +54,25 @@ const Cards = styled(BaseLayout)`
   }
 `
 
-// const CTACards = styled(BaseLayout)`
-//   align-items: start;
-//   margin-bottom: 32px;
+const CTACards = styled(BaseLayout)`
+  align-items: start;
+  margin-bottom: 32px;
 
-//   & > div {
-//     grid-column: span 6;
-//   }
+  & > div {
+    grid-column: span 6;
+  }
 
-//   ${({ theme }) => theme.mediaQueries.sm} {
-//     & > div {
-//       grid-column: span 8;
-//     }
-//   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 8;
+    }
+  }
 
-//   ${({ theme }) => theme.mediaQueries.lg} {
-//     & > div {
-//       grid-column: span 4;
-//     }
-//   }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 6;
+    }
+  }
 // `
 
 const Home: React.FC = () => {
@@ -90,13 +89,12 @@ const Home: React.FC = () => {
       <div>
         <Cards>
           <FarmStakingCard />
-          {/* <LotteryCard /> */}
-          <EarnAPRCard />
+          <KissAnnouncement />
         </Cards>
+        <CTACards>
           <EarnAssetCard />
-        {/* <CTACards> */}
-          {/* <WinCard /> */}
-        {/* </CTACards> */}
+          <EarnAPRCard />
+        </CTACards>
         <Cards>
           <KissStats />
           <TotalValueLockedCard />
