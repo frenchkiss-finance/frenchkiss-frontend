@@ -6,7 +6,7 @@ const tokens = {
   kiss: {
     symbol: 'KISS',
     address: {
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      56: '0x3b44b0cFe3a290906F3C6479df56457db9d7cd59',
       97: '0x10A3f8EEcA50d62D1A78d48DA0353592507975D3',
     },
     decimals: 18,
@@ -16,7 +16,7 @@ const tokens = {
     symbol: 'wBNB',
     address: {
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-      97: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
+      97: '0x8288Aad885Bb028a1910F2878b36a4BC1FE33e1a',
     },
     decimals: 18,
     projectLink: 'https://frenchkiss.finance/',
@@ -51,7 +51,7 @@ const tokens = {
   gloss: {
     symbol: 'GLOSS',
     address: {
-      56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+      56: '0x3cbc958a41fa3a220158aa86edd49d50b221039b',
       97: '0x9CF0fe6347F8a149172b80807d5D3bf12747DFa1',
     },
     decimals: 18,

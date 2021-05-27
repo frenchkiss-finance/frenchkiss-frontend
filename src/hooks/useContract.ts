@@ -5,33 +5,15 @@ import {
   getKissContract,
   getBunnyFactoryContract,
   getBunnySpecialContract,
-  getFrenchkissRabbitContract,
-  getProfileContract,
-  getIfoV1Contract,
-  getIfoV2Contract,
-  getLotteryContract,
-  getLotteryTicketContract,
   getMasterchefContract,
   getPointCenterIfoContract,
   getSouschefContract,
   getClaimRefundContract,
-  getTradingCompetitionContract,
-  getEasterNftContract,
 } from 'utils/contractHelpers'
 
 /**
  * Helper hooks to get specific contracts (by ABI)
  */
-
-export const useIfoV1Contract = (address: string) => {
-  const web3 = useWeb3()
-  return useMemo(() => getIfoV1Contract(address, web3), [address, web3])
-}
-
-export const useIfoV2Contract = (address: string) => {
-  const web3 = useWeb3()
-  return useMemo(() => getIfoV2Contract(address, web3), [address, web3])
-}
 
 export const useERC20 = (address: string) => {
   const web3 = useWeb3()
@@ -46,26 +28,6 @@ export const useKiss = () => {
 export const useBunnyFactory = () => {
   const web3 = useWeb3()
   return useMemo(() => getBunnyFactoryContract(web3), [web3])
-}
-
-export const useFrenchkissRabbits = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getFrenchkissRabbitContract(web3), [web3])
-}
-
-export const useProfile = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getProfileContract(web3), [web3])
-}
-
-export const useLottery = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getLotteryContract(web3), [web3])
-}
-
-export const useLotteryTicket = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getLotteryTicketContract(web3), [web3])
 }
 
 export const useMasterchef = () => {
@@ -91,14 +53,4 @@ export const useBunnySpecialContract = () => {
 export const useClaimRefundContract = () => {
   const web3 = useWeb3()
   return useMemo(() => getClaimRefundContract(web3), [web3])
-}
-
-export const useTradingCompetitionContract = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getTradingCompetitionContract(web3), [web3])
-}
-
-export const useEasterNftContract = () => {
-  const web3 = useWeb3()
-  return useMemo(() => getEasterNftContract(web3), [web3])
 }
