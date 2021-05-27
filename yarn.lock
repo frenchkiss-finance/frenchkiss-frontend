@@ -1749,10 +1749,10 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@frenchkiss-libs/uikit@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/uikit/-/uikit-0.0.6.tgz#c4c54129e14c3c38ba7e786f16cc425fa4206209"
-  integrity sha512-Yw90LlKC1yb3OIY87v+p8BsfI3riPfIBAvOffhLXFsfCS2VrWw62Z+Mvda1Xdqae8yctNFvUdLRHcZwi+YtaUw==
+"@frenchkiss-libs/uikit@0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/uikit/-/uikit-0.0.12.tgz#d577c5691c3a89aad90683de9204e036365fb760"
+  integrity sha512-Mug2xT6qVXs3w6jMALHicBjcRbThHTTkf/YbXfveZ+BBjMRBen7syZUEa2ihhTNa5ogty214HFLqQLZQSujxZQ==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
