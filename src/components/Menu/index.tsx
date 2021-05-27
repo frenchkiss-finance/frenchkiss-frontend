@@ -5,7 +5,7 @@ import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import useAuth from 'hooks/useAuth'
-import { usePriceKissBusd, useProfile } from 'state/hooks'
+import { usePriceKissBusd } from 'state/hooks'
 import config from './config'
 
 const Menu = (props) => {
@@ -14,7 +14,6 @@ const Menu = (props) => {
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
   const kissPriceUsd = usePriceKissBusd()
-  // const { profile } = useProfile()
 
   return (
     <UikitMenu
@@ -28,13 +27,6 @@ const Menu = (props) => {
       setLang={setSelectedLanguage}
       kissPriceUsd={kissPriceUsd.toNumber()}
       links={config}
-      // profile={{
-      //   username: profile?.username,
-      //   image: profile?.nft ? `/images/nfts/${profile.nft?.images.sm}` : undefined,
-      //   profileLink: '/profile',
-      //   noProfileLink: '/profile',
-      //   showPip: !profile?.username,
-      // }}
       {...props}
     />
   )
