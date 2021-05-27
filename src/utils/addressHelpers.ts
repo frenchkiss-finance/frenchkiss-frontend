@@ -20,33 +20,3 @@ export const getMulticallAddress = () => {
 export const getWbnbAddress = () => {
   return getAddress(tokens.wbnb.address)
 }
-export const getLotteryAddress = () => {
-  return getAddress(addresses.lottery)
-}
-export const getLotteryTicketAddress = () => {
-  return getAddress(addresses.lotteryNFT)
-}
-export const getFrenchkissProfileAddress = () => {
-  return getAddress(addresses.frenchkissProfile)
-}
-export const getFrenchkissRabbitsAddress = () => {
-  return getAddress(addresses.frenchkissRabbits)
-}
-export const getBunnyFactoryAddress = () => {
-  return getAddress(addresses.bunnyFactory)
-}
-export const getClaimRefundAddress = () => {
-  return getAddress(addresses.claimRefund)
-}
-export const getPointCenterIfoAddress = () => {
-  return getAddress(addresses.pointCenterIfo)
-}
-export const getBunnySpecialAddress = () => {
-  return getAddress(addresses.bunnySpecial)
-}
-export const getTradingCompetitionAddress = () => {
-  return getAddress(addresses.tradingCompetition)
-}
-export const getEasterNftAddress = () => {
-  return getAddress(addresses.easterNft)
-}

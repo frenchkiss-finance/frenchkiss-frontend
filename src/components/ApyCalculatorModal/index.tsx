@@ -36,6 +36,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   apr,
   addLiquidityUrl,
 }) => {
+  
   const TranslateString = useI18n()
   const oneThousandDollarsWorthOfKiss = 1000 / kissPrice.toNumber()
 

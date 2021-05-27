@@ -1,6 +1,6 @@
 import { Toast } from '@frenchkiss-libs/uikit'
 import BigNumber from 'bignumber.js'
-import { CampaignType, FarmConfig, PoolConfig } from 'config/constants/types'
+import { FarmConfig, PoolConfig } from 'config/constants/types'
 
 export type TranslatableText =
   | string

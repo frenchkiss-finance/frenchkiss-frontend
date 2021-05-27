@@ -154,11 +154,12 @@ export const usePriceKissBusd = (): BigNumber => {
   const kissBnbFarm = useFarmFromPid(1)
   const bnbBusdFarm = useFarmFromPid(2)
 
-  const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
-  const kissBusdPrice = kissBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(kissBnbFarm.tokenPriceVsQuote) : ZERO
+  const bnbBusdPrice = bnbBusdFarm && bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
+  const kissBusdPrice = kissBnbFarm && kissBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(kissBnbFarm.tokenPriceVsQuote) : ZERO
+  
+  const final = !kissBusdPrice ? new BigNumber(0.0000001) : kissBusdPrice
 
-  // return kissBusdPrice
-  return new BigNumber(1);
+  return final
 }
 
 // Block
