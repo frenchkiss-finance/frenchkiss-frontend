@@ -1,6 +1,6 @@
 import { Toast } from '@frenchkiss-libs/uikit'
 import BigNumber from 'bignumber.js'
-import { CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constants/types'
+import { CampaignType, FarmConfig, PoolConfig } from 'config/constants/types'
 
 export type TranslatableText =
   | string
@@ -39,19 +39,6 @@ export interface Pool extends PoolConfig {
   }
 }
 
-export interface Profile {
-  userId: number
-  points: number
-  teamId: number
-  nftAddress: string
-  tokenId: number
-  isActive: boolean
-  username: string
-  nft?: Nft
-  team: Team
-  hasRegistered: boolean
-}
-
 // Slices states
 
 export interface ToastsState {
@@ -66,44 +53,6 @@ export interface PoolsState {
   data: Pool[]
 }
 
-export interface ProfileState {
-  isInitialized: boolean
-  isLoading: boolean
-  hasRegistered: boolean
-  data: Profile
-}
-
-export type TeamResponse = {
-  0: string
-  1: string
-  2: string
-  3: string
-  4: boolean
-}
-
-export type TeamsById = {
-  [key: string]: Team
-}
-
-export interface TeamsState {
-  isInitialized: boolean
-  isLoading: boolean
-  data: TeamsById
-}
-
-export interface Achievement {
-  id: string
-  type: CampaignType
-  address: string
-  title: TranslatableText
-  description?: TranslatableText
-  badge: string
-  points: number
-}
-
-export interface AchievementState {
-  data: Achievement[]
-}
 
 // API Price State
 export interface PriceApiList {
@@ -153,8 +102,5 @@ export interface State {
   toasts: ToastsState
   prices: PriceState
   pools: PoolsState
-  profile: ProfileState
-  teams: TeamsState
-  achievements: AchievementState
   block: BlockState
 }

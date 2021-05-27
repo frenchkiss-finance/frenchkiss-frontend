@@ -1,11 +1,9 @@
 import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
-import { useWeb3React } from '@web3-react/core'
 import { Toast, toastTypes } from '@frenchkiss-libs/uikit'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
-import { Team } from 'config/constants/types'
 import { getWeb3NoAccount } from 'utils/web3'
 import { getAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -19,10 +17,7 @@ import {
   clear as clearToast,
   setBlock,
 } from './actions'
-import { State, Farm, Pool, ProfileState, TeamsState, AchievementState, PriceState } from './types'
-import { fetchProfile } from './profile'
-import { fetchTeam, fetchTeams } from './teams'
-import { fetchAchievements } from './achievements'
+import { State, Farm, Pool, PriceState } from './types'
 import { fetchPrices } from './prices'
 
 export const useFetchPublicData = () => {
