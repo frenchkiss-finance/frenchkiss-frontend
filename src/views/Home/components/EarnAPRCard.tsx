@@ -45,26 +45,26 @@ const EarnAPRCard = () => {
 
   return (
     <StyledFarmStakingCard>
-      <CardBody>
-        <Heading color="contrast" size="lg">
-          Earn up to
-        </Heading>
-        <CardMidContent color="#7645d9">
-          {highestApr ? (
-            `${highestApr}% APR`
-          ) : (
-            <Skeleton animation="pulse" variant="rect" height="44px" />
-          )}
-        </CardMidContent>
-        <Flex justifyContent="space-between">
+      <NavLink exact activeClassName="active" to="/farms" id="farm-apr-cta">
+        <CardBody>
           <Heading color="contrast" size="lg">
-            in Farms
+            Earn up to
+        </Heading>
+          <CardMidContent color="#7645d9">
+            {highestApr ? (
+              `${highestApr}% APR`
+            ) : (
+              <Skeleton animation="pulse" variant="rect" height="44px" />
+            )}
+          </CardMidContent>
+          <Flex justifyContent="space-between">
+            <Heading color="contrast" size="lg">
+              in Farms
           </Heading>
-          <NavLink exact activeClassName="active" to="/farms" id="farm-apr-cta">
             <ArrowForwardIcon mt={30} color="primary" />
-          </NavLink>
-        </Flex>
-      </CardBody>
+          </Flex>
+        </CardBody>
+      </NavLink>
     </StyledFarmStakingCard>
   )
 }

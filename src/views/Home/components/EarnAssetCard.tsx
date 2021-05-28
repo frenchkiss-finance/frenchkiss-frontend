@@ -27,20 +27,20 @@ const EarnAssetCard = () => {
 
   return (
     <StyledFarmStakingCard>
-      <CardBody>
-        <Heading color="contrast" size="lg">
-          Earn
-        </Heading>
-        <CardMidContent color="invertedContrast">{assets}</CardMidContent>
-        <Flex justifyContent="space-between">
+      <NavLink exact activeClassName="active" to="/pools" id="pool-cta">
+        <CardBody>
           <Heading color="contrast" size="lg">
-            in Pools
+            Earn
+        </Heading>
+          <CardMidContent color="invertedContrast">{assets}</CardMidContent>
+          <Flex justifyContent="space-between">
+            <Heading color="contrast" size="lg">
+              in Pools
           </Heading>
-          <NavLink exact activeClassName="active" to="/pools" id="pool-cta">
             <ArrowForwardIcon mt={30} color="primary" />
-          </NavLink>
-        </Flex>
-      </CardBody>
+          </Flex>
+        </CardBody>
+      </NavLink>
     </StyledFarmStakingCard>
   )
 }
