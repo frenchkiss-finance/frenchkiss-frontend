@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
  * Due to Cors the api was forked and a proxy was created
  * @see https://github.com/frenchkiss-finance/gatsby-frenchkiss-api/
  */
-// export const baseUrl = 'https://api.frenchkiss.finance/api/v1'
-export const baseUrl = 'https://api.pancakeswap.finance/api/v1'
+// export const baseUrl = 'https://api.frenchkiss.finance/api/'
+export const baseUrl = 'https://api.pancakeswap.finance/api/'
 
 /* eslint-disable camelcase */
 
