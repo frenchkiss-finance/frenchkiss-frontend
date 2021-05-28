@@ -3,7 +3,6 @@ import { Card, CardBody, Heading, Text } from '@frenchkiss-libs/uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
-import useI18n from 'hooks/useI18n'
 import { getKissAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
 
@@ -21,7 +20,6 @@ const Row = styled.div`
 `
 
 const KissStats = () => {
-  const TranslateString = useI18n()
   const totalSupply = getBalanceNumber(useTotalSupply())
   const burnedBalance = getBalanceNumber(useBurnedBalance(getKissAddress()))
   const kissCirculatingSupply = totalSupply ? totalSupply - burnedBalance : 0
@@ -30,22 +28,22 @@ const KissStats = () => {
     <StyledKissStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Kiss Stats')}
+          Kiss Stats
         </Heading>
         <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Total KISS Supply')}</Text>
+          <Text fontSize="14px">Total KISS Supply</Text>
           {totalSupply && <CardValue fontSize="14px" value={totalSupply} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(538, 'Total KISS Burned')}</Text>
+          <Text fontSize="14px">Total KISS Burned</Text>
           <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(540, 'Total Circulating Supply')}</Text>
+          <Text fontSize="14px">Total Circulating Supply</Text>
           <CardValue fontSize="14px" decimals={0} value={kissCirculatingSupply} />
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New KISS/block')}</Text>
+          <Text fontSize="14px">New KISS/block</Text>
           <CardValue fontSize="14px" decimals={0} value={22.5} />
         </Row>
       </CardBody>

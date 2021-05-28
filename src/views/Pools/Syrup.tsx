@@ -6,7 +6,6 @@ import { useWeb3React } from '@web3-react/core'
 import { Heading } from '@frenchkiss-libs/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
-import useI18n from 'hooks/useI18n'
 import { usePools, useBlock } from 'state/hooks'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
@@ -17,7 +16,6 @@ import Divider from './components/Divider'
 
 const Farm: React.FC = () => {
   const { path } = useRouteMatch()
-  const TranslateString = useI18n()
   const { account } = useWeb3React()
   const pools = usePools(account)
   const { currentBlock } = useBlock()
@@ -37,12 +35,12 @@ const Farm: React.FC = () => {
       <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
-            {TranslateString(738, 'Gloss Pool')}
+            Gloss Pool
           </Heading>
           <ul>
-            <li>{TranslateString(580, 'Stake KISS to earn new tokens.')}</li>
-            <li>{TranslateString(486, 'You can unstake at any time.')}</li>
-            <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
+            <li>Stake KISS to earn new tokens.</li>
+            <li>You can unstake at any time.</li>
+            <li>Rewards are calculated per block.</li>
           </ul>
         </div>
         <img src="/images/syrup.png" alt="GLOSS POOL icon" width={410} height={191} />

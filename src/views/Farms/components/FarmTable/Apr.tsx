@@ -5,7 +5,6 @@ import { Address } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import useI18n from 'hooks/useI18n'
 
 export interface AprProps {
   value: string
@@ -49,7 +48,6 @@ const Apr: React.FC<AprProps> = ({
   originalValue,
   hideButton = false,
 }) => {
-  const TranslateString = useI18n()
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
 
@@ -63,7 +61,7 @@ const Apr: React.FC<AprProps> = ({
           )}
         </>
       ) : (
-        <AprWrapper>{TranslateString(656, 'Loading...')}</AprWrapper>
+        <AprWrapper>Loading...</AprWrapper>
       )}
     </Container>
   ) : (

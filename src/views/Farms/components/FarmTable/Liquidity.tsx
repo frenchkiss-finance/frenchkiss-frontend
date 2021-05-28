@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HelpIcon, Text, useTooltip } from '@frenchkiss-libs/uikit'
-import useI18n from 'hooks/useI18n'
 
 const ReferenceElement = styled.div`
   display: inline-block;
@@ -32,9 +31,8 @@ const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
   const displayLiquidity = liquidity
     ? `$${Number(liquidity).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
     : '-'
-  const TranslateString = useI18n()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    TranslateString(999, 'The total value of the funds in this farm’s liquidity pool'),
+    'The total value of the funds in this farm’s liquidity pool',
     'top-end',
     'hover',
     undefined,

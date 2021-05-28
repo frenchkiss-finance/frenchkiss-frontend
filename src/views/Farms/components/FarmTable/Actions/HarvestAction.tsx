@@ -5,7 +5,6 @@ import BigNumber from 'bignumber.js'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useHarvest } from 'hooks/useHarvest'
-import useI18n from 'hooks/useI18n'
 import { usePriceKissBusd } from 'state/hooks'
 import { useCountUp } from 'react-countup'
 
@@ -27,7 +26,6 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
 
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useHarvest(pid)
-  const TranslateString = useI18n()
 
   const { countUp, update } = useCountUp({
     start: 0,
@@ -46,7 +44,7 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
     <ActionContainer>
       <ActionTitles>
         <Title>KISS </Title>
-        <Subtle>{TranslateString(1072, 'EARNED')}</Subtle>
+        <Subtle>EARNED</Subtle>
       </ActionTitles>
       <ActionContent>
         <div>
@@ -62,7 +60,7 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
           }}
           ml="4px"
         >
-          {TranslateString(562, 'Harvest')}
+          Harvest
         </Button>
       </ActionContent>
     </ActionContainer>

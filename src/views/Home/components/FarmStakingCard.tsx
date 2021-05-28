@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Heading, Card, CardBody, Button } from '@frenchkiss-libs/uikit'
 import { useWeb3React } from '@web3-react/core'
-import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
@@ -36,7 +35,6 @@ const Actions = styled.div`
 const FarmedStakingCard = () => {
   const [pendingTx, setPendingTx] = useState(false)
   const { account } = useWeb3React()
-  const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
   const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.balance.toNumber() > 0)
 
@@ -57,15 +55,15 @@ const FarmedStakingCard = () => {
     <StyledFarmStakingCard>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(542, 'Farms & Staking')}
+          Farms & Staking
         </Heading>
         <CardImage src="/images/kiss.svg" alt="kiss logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'KISS to Harvest')}:</Label>
+          <Label>KISS to Harvest:</Label>
           <KissHarvestBalance />
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'KISS in Wallet')}:</Label>
+          <Label>KISS in Wallet:</Label>
           <KissWalletBalance />
         </Block>
         <Actions>
@@ -77,10 +75,9 @@ const FarmedStakingCard = () => {
               width="100%"
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting KISS')
-                : TranslateString(532, `Harvest all (${balancesWithValue.length})`, {
-                    count: balancesWithValue.length,
-                  })}
+                ? 'Collecting KISS'
+                : `Harvest all (${balancesWithValue.length})`
+              }
             </Button>
           ) : (
             <UnlockButton width="100%" />

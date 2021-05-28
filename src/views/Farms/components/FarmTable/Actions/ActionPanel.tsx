@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import useI18n from 'hooks/useI18n'
 import { LinkExternal, Text } from '@frenchkiss-libs/uikit'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
@@ -102,7 +101,6 @@ const ValueWrapper = styled.div`
 const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, multiplier, liquidity }) => {
   const farm = details
 
-  const TranslateString = useI18n()
   const isActive = farm.multiplier !== '0X'
   const { quoteToken, token, dual } = farm
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('FRENCHKISS', '')
@@ -120,12 +118,12 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
         {isActive && (
           <StakeContainer>
             <StyledLinkExternal href={`https://exchange.frenchkiss.finance/#/add/${liquidityUrlPathParts}`}>
-              {TranslateString(999, `Get ${lpLabel}`, { name: lpLabel })}
+              Get {lpLabel}
             </StyledLinkExternal>
           </StakeContainer>
         )}
-        <StyledLinkExternal href={bsc}>{TranslateString(999, 'View Contract')}</StyledLinkExternal>
-        <StyledLinkExternal href={info}>{TranslateString(999, 'See Pair Info')}</StyledLinkExternal>
+        <StyledLinkExternal href={bsc}>View Contract</StyledLinkExternal>
+        <StyledLinkExternal href={info}>See Pair Info</StyledLinkExternal>
         <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}
@@ -133,15 +131,15 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
       </InfoContainer>
       <ValueContainer>
         <ValueWrapper>
-          <Text>{TranslateString(736, 'APR')}</Text>
+          <Text>APR</Text>
           <Apr {...apr} />
         </ValueWrapper>
         <ValueWrapper>
-          <Text>{TranslateString(999, 'Multiplier')}</Text>
+          <Text>Multiplier</Text>
           <Multiplier {...multiplier} />
         </ValueWrapper>
         <ValueWrapper>
-          <Text>{TranslateString(999, 'Liquidity')}</Text>
+          <Text>Liquidity</Text>
           <Liquidity {...liquidity} />
         </ValueWrapper>
       </ValueContainer>

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
-import useI18n from 'hooks/useI18n'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Flex, MetamaskIcon } from '@frenchkiss-libs/uikit'
 import Balance from 'components/Balance'
@@ -94,7 +93,6 @@ const CardFooter: React.FC<Props> = ({
 }) => {
   const { currentBlock } = useBlock()
   const [isOpen, setIsOpen] = useState(false)
-  const TranslateString = useI18n()
   const Icon = isOpen ? ChevronUp : ChevronDown
 
   const handleClick = () => setIsOpen(!isOpen)
@@ -114,7 +112,7 @@ const CardFooter: React.FC<Props> = ({
           <Tag />
         </FlexFull>
         <StyledDetailsButton onClick={handleClick}>
-          {isOpen ? TranslateString(1066, 'Hide') : TranslateString(658, 'Details')} <Icon />
+          {isOpen ? 'Hide' : 'Details'} <Icon />
         </StyledDetailsButton>
       </Row>
       {isOpen && (
@@ -123,9 +121,9 @@ const CardFooter: React.FC<Props> = ({
             <FlexFull>
               <Label>
                 <span role="img" aria-label="syrup">
-                  🥞{' '}
+                  💋{' '}
                 </span>
-                {TranslateString(408, 'Total')}
+                Total
               </Label>
             </FlexFull>
             <Balance fontSize="14px" isDisabled={isFinished} value={getBalanceNumber(totalStaked, decimals)} />
@@ -133,7 +131,7 @@ const CardFooter: React.FC<Props> = ({
           {blocksUntilStart > 0 && (
             <Row mb="4px">
               <FlexFull>
-                <Label>{TranslateString(1212, 'Start')}:</Label>
+                <Label>Start:</Label>
               </FlexFull>
               <Balance fontSize="14px" isDisabled={isFinished} value={blocksUntilStart} decimals={0} />
             </Row>
@@ -141,7 +139,7 @@ const CardFooter: React.FC<Props> = ({
           {blocksUntilStart === 0 && blocksRemaining > 0 && (
             <Row mb="4px">
               <FlexFull>
-                <Label>{TranslateString(410, 'End')}:</Label>
+                <Label>End:</Label>
               </FlexFull>
               <Balance fontSize="14px" isDisabled={isFinished} value={blocksRemaining} decimals={0} />
             </Row>
@@ -155,7 +153,7 @@ const CardFooter: React.FC<Props> = ({
             </Flex>
           )}
           <TokenLink href={projectLink} target="_blank">
-            {TranslateString(412, 'View project site')}
+            View project site
           </TokenLink>
         </Details>
       )}

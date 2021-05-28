@@ -2,7 +2,6 @@ import React from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { Modal, Text, LinkExternal, Flex } from '@frenchkiss-libs/uikit'
-import useI18n from 'hooks/useI18n'
 import { kissEarnedPerThousandDollarsCompounding, getRoi } from 'utils/compoundApyHelpers'
 
 interface ApyCalculatorModalProps {
@@ -36,8 +35,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   apr,
   addLiquidityUrl,
 }) => {
-  
-  const TranslateString = useI18n()
+
   const oneThousandDollarsWorthOfKiss = 1000 / kissPrice.toNumber()
 
   const kissEarnedPerThousand1D = kissEarnedPerThousandDollarsCompounding({ numberOfDays: 1, farmApr: apr, kissPrice })
@@ -58,17 +56,17 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
       <Grid>
         <GridItem>
           <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase" mb="20px">
-            {TranslateString(860, 'Timeframe')}
+            Timeframe
           </Text>
         </GridItem>
         <GridItem>
           <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase" mb="20px">
-            {TranslateString(858, 'ROI')}
+            ROI
           </Text>
         </GridItem>
         <GridItem>
           <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase" mb="20px">
-            {TranslateString(864, 'KISS per $1000')}
+            KISS per $1000
           </Text>
         </GridItem>
         {/* 1 day row */}
@@ -121,14 +119,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
       </Grid>
       <Description fontSize="12px" color="textSubtle">
-        {TranslateString(
-          866,
-          'Calculated based on current rates. Compounding once daily. Rates are estimates provided for your convenience only, and by no means represent guaranteed returns.',
-        )}
+        Calculated based on current rates. Compounding once daily. Rates are estimates provided for your convenience only, and by no means represent guaranteed returns.
       </Description>
       <Flex justifyContent="center">
         <LinkExternal href={addLiquidityUrl}>
-          {TranslateString(999, 'Get')} {lpLabel}
+          Get {lpLabel}
         </LinkExternal>
       </Flex>
     </Modal>

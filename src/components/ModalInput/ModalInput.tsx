@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Text, Button, Input, InputProps, Flex, Link } from '@frenchkiss-libs/uikit'
-import useI18n from 'hooks/useI18n'
 
 interface ModalInputProps {
   max: string
@@ -65,7 +64,6 @@ const ModalInput: React.FC<ModalInputProps> = ({
   addLiquidityUrl,
   inputTitle,
 }) => {
-  const TranslateString = useI18n()
   const isBalanceZero = max === '0' || !max
 
   const displayBalance = (balance: string) => {
@@ -85,13 +83,13 @@ const ModalInput: React.FC<ModalInputProps> = ({
         <Flex justifyContent="space-between" pl="16px">
           <Text fontSize="14px">{inputTitle}</Text>
           <Text fontSize="14px">
-            {TranslateString(1120, 'Balance')}: {displayBalance(max)}
+            Balance: {displayBalance(max)}
           </Text>
         </Flex>
         <Flex alignItems="flex-end" justifyContent="space-around">
           <StyledInput onChange={onChange} placeholder="0" value={value} />
           <Button scale="sm" onClick={onSelectMax} mr="8px">
-            {TranslateString(452, 'Max')}
+            Max
           </Button>
           <Text fontSize="16px">{symbol}</Text>
         </Flex>
@@ -100,7 +98,7 @@ const ModalInput: React.FC<ModalInputProps> = ({
         <StyledErrorMessage fontSize="14px" color="failure">
           No tokens to stake:{' '}
           <Link fontSize="14px" bold={false} href={addLiquidityUrl} external color="failure">
-            {TranslateString(999, 'get')} {symbol}
+            get {symbol}
           </Link>
         </StyledErrorMessage>
       )}

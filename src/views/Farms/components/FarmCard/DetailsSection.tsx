@@ -1,5 +1,4 @@
 import React from 'react'
-import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
 import { Text, Flex, LinkExternal } from '@frenchkiss-libs/uikit'
 
@@ -28,21 +27,20 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
   lpLabel,
   addLiquidityUrl,
 }) => {
-  const TranslateString = useI18n()
 
   return (
     <Wrapper>
       <Flex justifyContent="space-between">
-        <Text>{TranslateString(354, 'Total Liquidity')}:</Text>
+        <Text>Total Liquidity:</Text>
         <Text>{totalValueFormatted}</Text>
       </Flex>
       {!removed && (
         <StyledLinkExternal href={addLiquidityUrl}>
-          {TranslateString(999, `Get ${lpLabel}`, { name: lpLabel })}
+          Get {lpLabel}
         </StyledLinkExternal>
       )}
-      <StyledLinkExternal href={bscScanAddress}>{TranslateString(999, 'View Contract')}</StyledLinkExternal>
-      <StyledLinkExternal href={infoAddress}>{TranslateString(999, 'See Pair Info')}</StyledLinkExternal>
+      <StyledLinkExternal href={bscScanAddress}>View Contract</StyledLinkExternal>
+      <StyledLinkExternal href={infoAddress}>See Pair Info</StyledLinkExternal>
     </Wrapper>
   )
 }

@@ -11,7 +11,6 @@ import { useFarms, usePriceKissBusd, useGetApiPrices } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { Farm } from 'state/types'
-import useI18n from 'hooks/useI18n'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getFarmApr } from 'utils/apr'
 import { orderBy } from 'lodash'
@@ -113,7 +112,6 @@ const Header = styled.div`
 const Farms: React.FC = () => {
   const { path } = useRouteMatch()
   const { pathname } = useLocation()
-  const TranslateString = useI18n()
   const farmsLP = useFarms()
   const kissPrice = usePriceKissBusd()
   const [query, setQuery] = useState('')
@@ -294,10 +292,10 @@ const Farms: React.FC = () => {
     <>
       <Header>
         <Heading as="h1" size="xxl" color="secondary" mb="24px">
-          {TranslateString(674, 'Farms')}
+          Farms
         </Heading>
         <Heading size="lg" color="text">
-          {TranslateString(999, 'Stake Liquidity Pool (LP) tokens to earn.')}
+          Stake Liquidity Pool (LP) tokens to earn.
         </Heading>
       </Header>
       <Page>
@@ -306,7 +304,7 @@ const Farms: React.FC = () => {
             <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
             <ToggleWrapper>
               <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
-              <Text> {TranslateString(1116, 'Staked only')}</Text>
+              <Text> Staked only</Text>
             </ToggleWrapper>
             <FarmTabButtons />
           </ViewControls>

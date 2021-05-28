@@ -2,7 +2,6 @@ import React from 'react'
 import { Text } from '@frenchkiss-libs/uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
-import useI18n from 'hooks/useI18n'
 import useAllEarnings from 'hooks/useAllEarnings'
 import { usePriceKissBusd } from 'state/hooks'
 import styled from 'styled-components'
@@ -14,7 +13,6 @@ const Block = styled.div`
 `
 
 const KissHarvestBalance = () => {
-  const TranslateString = useI18n()
   const { account } = useWeb3React()
   const allEarnings = useAllEarnings()
   const earningsSum = allEarnings.reduce((accum, earning) => {
@@ -26,7 +24,7 @@ const KissHarvestBalance = () => {
   if (!account) {
     return (
       <Text color="textDisabled" style={{ lineHeight: '76px' }}>
-        {TranslateString(298, 'Locked')}
+        Locked
       </Text>
     )
   }

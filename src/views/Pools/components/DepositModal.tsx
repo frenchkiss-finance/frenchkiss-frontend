@@ -3,7 +3,6 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { Button, Modal } from '@frenchkiss-libs/uikit'
 import ModalActions from 'components/ModalActions'
 import TokenInput from 'components/TokenInput'
-import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 
 interface DepositModalProps {
@@ -23,7 +22,6 @@ const DepositModal: React.FC<DepositModalProps> = ({
 }) => {
   const [val, setVal] = useState('')
   const [pendingTx, setPendingTx] = useState(false)
-  const TranslateString = useI18n()
   const fullBalance = useMemo(() => {
     return getFullDisplayBalance(max, stakingTokenDecimals)
   }, [max, stakingTokenDecimals])
@@ -40,7 +38,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
   }, [fullBalance, setVal])
 
   return (
-    <Modal title={`${TranslateString(316, 'Deposit')} ${tokenName} Tokens`} onDismiss={onDismiss}>
+    <Modal title={`Deposit ${tokenName} Tokens`} onDismiss={onDismiss}>
       <TokenInput
         value={val}
         onSelectMax={handleSelectMax}
@@ -50,7 +48,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
       />
       <ModalActions>
         <Button width="100%" variant="secondary" onClick={onDismiss}>
-          {TranslateString(462, 'Cancel')}
+          Cancel
         </Button>
         <Button
           width="100%"
@@ -62,7 +60,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
             onDismiss()
           }}
         >
-          {pendingTx ? TranslateString(488, 'Pending Confirmation') : TranslateString(464, 'Confirm')}
+          {pendingTx ? 'Pending Confirmation' : 'Confirm'}
         </Button>
       </ModalActions>
     </Modal>
