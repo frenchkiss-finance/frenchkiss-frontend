@@ -22,9 +22,9 @@ const Row = styled.div`
 
 const KissStats = () => {
   const TranslateString = useI18n()
-  const totalSupply = useTotalSupply()
+  const totalSupply = getBalanceNumber(useTotalSupply())
   const burnedBalance = getBalanceNumber(useBurnedBalance(getKissAddress()))
-  const kissSupply = totalSupply ? getBalanceNumber(totalSupply) - burnedBalance : 0
+  const kissCirculatingSupply = totalSupply ? totalSupply - burnedBalance : 0
 
   return (
     <StyledKissStats>
@@ -34,15 +34,19 @@ const KissStats = () => {
         </Heading>
         <Row>
           <Text fontSize="14px">{TranslateString(536, 'Total KISS Supply')}</Text>
-          {kissSupply && <CardValue fontSize="14px" value={kissSupply} />}
+          {totalSupply && <CardValue fontSize="14px" value={totalSupply} />}
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(538, 'Total KISS Burned')}</Text>
           <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
         </Row>
         <Row>
+          <Text fontSize="14px">{TranslateString(540, 'Total Circulating Supply')}</Text>
+          <CardValue fontSize="14px" decimals={0} value={kissCirculatingSupply} />
+        </Row>
+        <Row>
           <Text fontSize="14px">{TranslateString(540, 'New KISS/block')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={1} />
+          <CardValue fontSize="14px" decimals={0} value={50} />
         </Row>
       </CardBody>
     </StyledKissStats>
