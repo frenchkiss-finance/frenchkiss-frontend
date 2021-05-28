@@ -13,7 +13,7 @@ const StyledTotalValueLockedCard = styled(Card)`
 const TotalValueLockedCard = () => {
   const TranslateString = useI18n()
   const data = useGetStats()
-  const tvl = data ? data.total_value_locked_all.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
+  const tvl = data ? data.totalLiquidityUSD.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
 
   return (
     <StyledTotalValueLockedCard>
@@ -24,7 +24,7 @@ const TotalValueLockedCard = () => {
         {data ? (
           <>
             <Heading size="xl">{`$${tvl}`}</Heading>
-            <Text color="textSubtle">{TranslateString(764, 'Across all LPs and Gloss Pools')}</Text>
+            <Text color="textSubtle">{TranslateString(764, 'Across all LPs')}</Text>
           </>
         ) : (
           <Skeleton height={66} />

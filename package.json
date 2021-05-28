@@ -48,6 +48,7 @@
     "ethers": "^5.0.31",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
+    "graphql-tag": "^2.12.4",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
