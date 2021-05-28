@@ -5,15 +5,6 @@ You can start by reading our [Contribution guidelines](https://docs.frenchkiss.f
 
 ## Setup
 
-Create a `.env.development.local` file at the root of the project. Add the following lines inside :
-
-```
-REACT_APP_CROWDIN_APIKEY = ""
-REACT_APP_CROWDIN_PROJECTID = ""
-```
-
-You'll need this in order to get the i18n system to work. Contact a dev if you need these values.
-
 Install the dependencies
 
 ```shell

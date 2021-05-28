@@ -46,7 +46,7 @@ const KissStats = () => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(540, 'New KISS/block')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={50} />
+          <CardValue fontSize="14px" decimals={0} value={22.5} />
         </Row>
       </CardBody>
     </StyledKissStats>
